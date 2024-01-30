@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Items</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/item_list.css" %}" >
+</head>
+<body>
+    <h2>Clothing Items</h2>
+    <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'item_create' %}">Add New Item</a>
+</body>
+</html>
+

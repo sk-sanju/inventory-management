@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/item_form.css" %}" >
+</head>
+<body>
+    <h2>Add New Item</h2>
+    <form method="post" action="{% url 'item_create' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'item_list' %}">Back to Item List</a>
+</body>
+</html>
